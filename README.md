@@ -10,3 +10,10 @@
 
 + 전라북도 전주시 완산구 거마평로 14 3층
 + 소프트웨어 솔루션 개발 및 제공 기업
+
+
+# 기업 연혁
+<img src=https://user-images.githubusercontent.com/59912150/146138110-eb7edd9f-d026-4b4a-aa83-b12f0910be81.png>
+<img src=https://user-images.githubusercontent.com/59912150/146138041-61beec4c-f53d-4e1f-ba38-c09b3a7087e0.png>
+<img src=https://user-images.githubusercontent.com/59912150/146138077-7ca2d9b4-c3ee-4c41-95ec-b8ed94bb1a80.png>
+<img src=https://user-images.githubusercontent.com/59912150/146137862-89798995-decc-4270-a5f6-cc4b24b4ed3b.png>
