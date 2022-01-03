@@ -4,6 +4,8 @@
 + 학생 본인의 출결 관리기능 지원
 + React-Native 프레임워크를 이용하여 개발 진행
 + 웹 서버는 자사 서버를 이용
++ <mark>**_소스코드는 회사 보안상의 이유로 정확한 코드로 명시하지 않았음_**</mark>
+
 <table>
 <tr>
 <td><img src=https://user-images.githubusercontent.com/59912150/146143248-c28291af-0574-42d0-bafe-9a6f3475b5bf.jpg></td>
@@ -43,7 +45,7 @@
 </br>
 
  > ## 결과 화면
-+ 입력한 키워드의 값이 성공적으로 검색이 되는 것을 확인가능.
++ 입력한 키워드의 값이 성공적으로 검색이 되는 것을 확인가능
 <table>
 <tr>
 <td><img src=https://user-images.githubusercontent.com/59912150/146146401-3e6c6151-03d1-4483-adac-cbbcdf7e68ee.jpg>
@@ -56,9 +58,9 @@
 </br>
 
 >## 2. UI개발 
-+ 알림,과제 등이 있을 경우 해당 과목들의 알림이 리스트 형식으로 나타나도록 UI를 개발.
-+ 리스트 형식으로 구현하기 위해 FlatList를 이용.
-+ 라이브러리를 이용해 ListItem을 사용하여 각 리스트의 아이템을 설정.
++ 알림,과제 등이 있을 경우 해당 과목들의 알림이 리스트 형식으로 나타나도록 UI를 개발
++ 리스트 형식으로 구현하기 위해 FlatList를 이용
++ 라이브러리를 이용해 ListItem을 사용하여 각 리스트의 아이템을 설정
 + [사용한 라이브러리 링크](https://reactnativeelements.com)
 
  ``` js
@@ -90,7 +92,7 @@
  </br>
 
  >## UI  개발 결과 화면
-+ 처음 알림 화면과 알림을 눌렀을때 나타나는 상세 화면.
++ 처음 알림 화면과 알림을 눌렀을때 나타나는 상세 화면
 <table>
 <tr>
 <td><img src=https://user-images.githubusercontent.com/59912150/147946959-8f2c2d98-e63c-4c04-8f5e-b8089fbb16e5.jpg>
