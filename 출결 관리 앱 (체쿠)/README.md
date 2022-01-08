@@ -153,7 +153,7 @@
 > ### 과제 제출 API 부분 코드
  ``` js
  const APILINK = async () => {
-  const amsStudentLink = (await API.getServer()).replace('checkoo.co.kr', '체쿠 학생 홈페이지');
+  const student_link = (await API.getServer()).replace('checkoo.co.kr', '체쿠 학생 홈페이지');
   Alert.alert(
     '확인',
     '과제제출을 위해 체쿠 학생지원시스템으로 이동합니다.\nPC에서도 학생지원시스템을 이용해 과제제출이 가능합니다.',
