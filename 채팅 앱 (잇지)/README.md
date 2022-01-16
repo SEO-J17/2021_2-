@@ -87,4 +87,93 @@ function 유저리스트 컴포넌트({item, onPress}: 아이템인터페이스)
 </tr>
 </table>
 
++ 위 그림은 친구 초대 버튼을 눌렀을 때 나타나는 친구목록 화면이다
++ 친구 목록은 Firebase에서 불러온 유저 정보 각각을 TouchableOpacity로 구성했다. 그리고 RadioButton 라이브러리를 이용하여 버튼을 추가 하여 구현했다.
++ Firebase 코드를 이용해서 채팅방에 이미 있는 사용자는 조건 연산자를 이용해서 초대가 안되게 반투명으로 표시하여 클릭을 막아놨다.
++ list를 하나 선언하여 클릭이 된 유저의 아이디 값을 list에 담고, 만약 같은 유저가 한 번더 클릭이 됐다면 list에 있는 ID값을 list 에서 제거한다. 
++ list에 유저 ID값을 저장하고 삭제하는 방식으로 구현하여 상단의 확인 버튼을 최종적으로 누르게 되면 Firebase로 유저ID값과 해당 방의 ID값을 보내서 유저들을 초대한다.
+<br>
+</br>
+> 친구 초대 리스트 코드 
+``` js
+function InviteCheck(유저아이디값: any) {
+    //이미 들어간 값이 있으면 리스트에서 해당 id 삭제
+    if (리스트.includes(유저아이디값)) {
+      리스트.pop(유저아이디값);
+    } else {
+      리스트.push(유저아이디값);
+    }
+  }
+
+function ChatUserListItem({item, roomId, onPress}: IChatUserListItem) {
+  const user = {
+    userId: 유저아이디 값
+    username: 유저 이름
+  };
+
+  const [checked, setChecked] = useState(false);
+  const isTouchable = isInvitable(user.userId, roomId);
+
+  return (
+    <TouchableOpacity
+      disabled={isTouchable}
+      onPress={() => onPress(유저아이디 값, setChecked(!checked))}>
+      <View
+        style={isTouchable ? styles.screen.disableditem : styles.screen.item}>
+        <RadioButton
+          disabled={isTouchable}
+          value="first"
+          status={checked ? 'checked' : 'unchecked'}
+          onPress={() => onPress(유저아이디 값, setChecked(!checked))}
+        />
+        <GiftedAvatar user={user} />
+        <Text style={styles.screen.itemText}>{유저이름}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+```
++ 제일 첫 번째 줄InviteCheck 함수는 앞서 설명했던 것 처럼 리스트를 하나 선언하고 유저가 클릭될 때 마다 리스트에서 삭제하고 추가하여 나중에 최종적으로 초대를 할때 리스트를 Firebase에 전달 되도록 했다.
++ 위 코드처럼 리스트는 TouchableOpacity로 구현했고 isInvitable이라는 함수를 통해 이미 방에 초대하고자 하는 유저가 존재 한다면 boolean값으로 받아 false면 클릭이 안되게 구현했다
++ 방 유무 뿐만 아니라 자신을 차단한 상대도 초대가 불가능 하게 구현했다
+
+<br>
+</br>
+
+> 친구 초대 가능 확인 파이어베이스 코드
+
+``` js
+function isInvitable(유저아이디값: string, 방 아이디: string) {
+  const [userExist, setUserExist] = useState(false);
+  const [userBlocked, setUserBlocked] = useState(false);
+
+  Firebase.방 정보
+    .child('채팅방')
+    .child(방아이디)
+    .once('value', (snapshot) => {
+      if (snapshot.exists()) {
+        if (snapshot.child(유저).child(유저아이디).exists()) {
+          setUserExist(true);
+        }
+      }
+    });
+
+  //나를 차단을 한 상대 초대X
+  Firebase.usersRef
+    .child('친구목록')
+    .once('value', (snapshot) => {
+      if (snapshot.exists()) {
+        const acceptBy = snapshot
+          .child(fbAuth.currentUser!.uid)
+          .child('accepted')
+          .val();
+        if (acceptBy === 'blocked') {
+          setUserBlocked(true);
+        }
+      }
+    });
+
+  return userExist || userBlocked;
+}
+```
 
