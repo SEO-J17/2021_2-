@@ -94,6 +94,8 @@ function 유저리스트 컴포넌트({item, onPress}: 아이템인터페이스)
 + list에 유저 ID값을 저장하고 삭제하는 방식으로 구현하여 상단의 확인 버튼을 최종적으로 누르게 되면 Firebase로 유저ID값과 해당 방의 ID값을 보내서 유저들을 초대한다.
 <br>
 </br>
+
+
 > 친구 초대 리스트 코드 
 ``` js
 function InviteCheck(유저아이디값: any) {
@@ -137,6 +139,8 @@ function ChatUserListItem({item, roomId, onPress}: IChatUserListItem) {
 + 위 코드처럼 리스트는 TouchableOpacity로 구현했고 isInvitable이라는 함수를 통해 이미 방에 초대하고자 하는 유저가 존재 한다면 boolean값으로 받아 false면 클릭이 안되게 구현했다
 + 방 유무 뿐만 아니라 자신을 차단한 상대도 초대가 불가능 하게 구현했다
 
+<br>
+</br>
 
 > 친구 초대 가능 확인 파이어베이스 코드
 
