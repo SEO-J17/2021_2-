@@ -137,6 +137,7 @@ function ChatUserListItem({item, roomId, onPress}: IChatUserListItem) {
 + 위 코드처럼 리스트는 TouchableOpacity로 구현했고 isInvitable이라는 함수를 통해 이미 방에 초대하고자 하는 유저가 존재 한다면 boolean값으로 받아 false면 클릭이 안되게 구현했다
 + 방 유무 뿐만 아니라 자신을 차단한 상대도 초대가 불가능 하게 구현했다
 
+
 <br>
 </br>
 
