@@ -138,9 +138,6 @@ function ChatUserListItem({item, roomId, onPress}: IChatUserListItem) {
 + 방 유무 뿐만 아니라 자신을 차단한 상대도 초대가 불가능 하게 구현했다
 
 
-<br>
-</br>
-
 > 친구 초대 가능 확인 파이어베이스 코드
 
 ``` js
