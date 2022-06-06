@@ -38,7 +38,7 @@
 >사이드 메뉴바 코드
 ``` js
 roomtype === '개인채팅방' && (
-          <TouchableOpacity onPress={초대 기능 함수 실행 부분}>
+          <TouchableOpacity onPress={초대 기능 함수}>
             <View style={styles.item}>
               <Image style={styles.inviteImage} source={InviteIcon}/>
               <Text style={styles.inviteText}>새로운 친구 초대</Text>
@@ -318,7 +318,7 @@ function 공개채팅방 리스트 함수({
 
 <br>
 
->## 3. 채팅방 비밀번호 기능 구현
+>## 3. 공개 채팅방 비밀번호 기능 구현
 <table>
 <tr>
 <td><img src=https://user-images.githubusercontent.com/59912150/172062009-58893d8f-9550-4fc8-b6cd-cf875ac2d557.jpg></td>
@@ -326,3 +326,13 @@ function 공개채팅방 리스트 함수({
 <td><img src=https://user-images.githubusercontent.com/59912150/172062012-7c60771c-c18a-43c0-b175-dc539543585b.jpg></td>
 </tr>
 </table>
+
+
++ 관리자가 공개 채팅방에 비밀번호를 설정해놨다면 비밀번호를 입력해서 들어갈 수 있게하는 기능이다.
++ 앞선 기능과 마찬가지로, 파이어베이스 코드를 통해서 비밀번호가 설정 되어있다면 비밀번호를 입력하라는 창이 뜨게 된다.
++ Alert.prompt를 이용해서 alert로 창을 띄우고, 사용자가 입력한 값하고 파이어베이스에서 받아온 설정된 비밀번호가 일치하게 되면 채팅방에 입장할 수 있게되고 만약 일치하지 않으면 비밀번호가 일치하지 않다는 창을 띄우게 되면서 입장을 거부 시킨다.
++ 비밀번호는 비교는 prompt안에서 삼항 조건 연산자를 통해서 비교를 진행하여 일치하면 채팅방에 입장할 수 있게하는 함수를 실행 시키고 아니면 alert를 띄운다.
++ 비교적 어려운 구현은 아니어서 빨리 구현을 한 것으로 기억한다.
++ 비밀 번호기능 구현을 끝으로 잇지 기능 개발을 모두 마쳤었다.
++ 나머지 업무는 앱 유지보수에 가까웠기 때문에 따로 작성하지는 않았다.
++ <mark><u>**_실습이 끝난 관계로 소스코드는 볼 수 없었다ㅜ.ㅜ_**</u></mark>
